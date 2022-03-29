@@ -3,7 +3,7 @@ from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 from authors.views import AuthorModelViewSet, BiographyModelViewSet, ArticleModelViewSet, BookModelViewSet
 from ToDo.views import ProjectModelViewSet, TODOModelViewSet
-from Mainapp.views import UserModelViewSet
+from users.views import UserModelViewSet
 
 
 router = DefaultRouter()
@@ -20,5 +20,4 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api-auth/', include('rest_framework.urls')),
     path('api/', include(router.urls)),
-    path('', include(router.urls)),
 ]

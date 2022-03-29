@@ -3,7 +3,7 @@ import React from 'react'
 
 const AuthorItem = ({author}) => {
    return (
-       <tr>
+       <tr className="tab-content">
            <td>
                {author.first_name}
            </td>
@@ -20,15 +20,15 @@ const AuthorItem = ({author}) => {
 
 const AuthorList = ({authors}) => {
    return (
-       <table>
+       <table className="table">
            <th>
-               First name
+               Имя
            </th>
            <th>
-               Last Name
+               Фамилия
            </th>
            <th>
-               Birthday year
+               Год рождения
            </th>
            {authors.map((author) => <AuthorItem author={author} />)}
        </table>

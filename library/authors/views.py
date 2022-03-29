@@ -1,6 +1,6 @@
 # from django.shortcuts import render
 from rest_framework.renderers import JSONRenderer, BrowsableAPIRenderer
-from rest_framework.viewsets import ModelViewSet
+from rest_framework.viewsets import ModelViewSet, ViewSet
 from .models import Author, Biography, Book, Article
 from .serializers import AuthorModelSerializer, BiographyModelSerializer, ArticleModelSerializer, BookModelSerializer
 
@@ -9,6 +9,7 @@ class AuthorModelViewSet(ModelViewSet):
     renderer_classes = [JSONRenderer, BrowsableAPIRenderer]
     queryset = Author.objects.all()
     serializer_class = AuthorModelSerializer
+    filterset_fields = ['first_name', 'last_name']
 
 
 class BiographyModelViewSet(ModelViewSet):

@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'authors',
     'corsheaders',
     'ToDo',
-    'Mainapp',
+    'users',
     'django_filters',
 ]
 

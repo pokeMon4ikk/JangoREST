@@ -1,6 +1,6 @@
-# from django.shortcuts import render
+from rest_framework import permissions
 from rest_framework.renderers import JSONRenderer, BrowsableAPIRenderer
-from rest_framework.viewsets import ModelViewSet, ViewSet
+from rest_framework.viewsets import ModelViewSet
 from .models import Author, Biography, Book, Article
 from .serializers import AuthorModelSerializer, BiographyModelSerializer, ArticleModelSerializer, BookModelSerializer
 
@@ -15,6 +15,7 @@ class AuthorModelViewSet(ModelViewSet):
 class BiographyModelViewSet(ModelViewSet):
     queryset = Biography.objects.all()
     serializer_class = BiographyModelSerializer
+    permission_classes = [permissions.IsAuthenticated]
 
 
 class ArticleModelViewSet(ModelViewSet):

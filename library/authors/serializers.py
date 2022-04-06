@@ -1,5 +1,4 @@
 from rest_framework import serializers
-from rest_framework.relations import StringRelatedField
 from .models import Author, Biography, Article, Book
 
 
@@ -34,5 +33,10 @@ class BookModelSerializer(serializers.ModelSerializer):
         model = Book
         fields = '__all__'
 
+
+class BookModelSerializerBase(serializers.ModelSerializer):
+    class Meta:
+        model = Book
+        fields = '__all__'
 
 

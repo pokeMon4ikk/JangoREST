@@ -10,7 +10,7 @@ const BookItem = ({book}) => {
                 {book.name}
             </td>
             <td>
-                {book.authors}
+                {book.author}
             </td>
        </tr>
     )

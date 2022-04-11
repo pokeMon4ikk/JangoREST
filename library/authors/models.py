@@ -19,7 +19,7 @@ class Biography(models.Model):
 
 class Book(models.Model):
     name = models.CharField(max_length=32)
-    authors = models.OneToOneField(Author, on_delete=models.CASCADE)
+    author = models.OneToOneField(Author, on_delete=models.CASCADE)
 
 
 class Article(models.Model):

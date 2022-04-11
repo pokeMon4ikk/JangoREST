@@ -1,5 +1,6 @@
 from django.contrib import admin
 from django.urls import path, include, re_path
+from graphene_django.views import GraphQLView
 from rest_framework import permissions
 from rest_framework.routers import DefaultRouter
 from authors.views import AuthorModelViewSet, BiographyModelViewSet, ArticleModelViewSet, BookModelViewSet
@@ -38,6 +39,7 @@ urlpatterns = [
     path('api-auth/', include('rest_framework.urls')),
     path('api/', include(router.urls)),
     path('api-token-auth/', views.obtain_auth_token),
+    path('graphql/', GraphQLView.as_view(graphiql=True)),
     re_path(r'^api/(?P<version>\d)/user/$', UserModelViewSet.as_view()),
     # path('api/users/1/', include('users.urls', namespace='1')),
     # path('api/users/2/', include('users.urls', namespace='2'))

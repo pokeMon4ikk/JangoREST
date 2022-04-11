@@ -27,7 +27,7 @@ class ArticleModelSerializer(serializers.ModelSerializer):
 
 
 class BookModelSerializer(serializers.ModelSerializer):
-    authors = serializers.StringRelatedField()
+    author = serializers.StringRelatedField()
 
     class Meta:
         model = Book

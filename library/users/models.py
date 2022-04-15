@@ -16,7 +16,7 @@ class User(models.Model):
     last_name = models.CharField(verbose_name='Фамилия', max_length=256, blank=True)
     birthday_year = models.PositiveIntegerField()
     gender = models.CharField(verbose_name='пол', max_length=1, choices=GENDER_CHOICES, blank=True)
-    age = models.PositiveIntegerField(verbose_name='Возраст')
+    age = models.PositiveIntegerField(verbose_name='Возраст', blank=True)
 
     def __str__(self):
         return self.first_name + '' + self.last_name

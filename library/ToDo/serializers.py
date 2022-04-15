@@ -5,7 +5,8 @@ from rest_framework import serializers
 class ProjectModelSerializer(serializers.ModelSerializer):
     class Meta:
         model = Project
-        exclude = ['uid']
+        # exclude = ['uid']
+        fields = '__all__'
 
 
 class TODOModelSerializer(serializers.ModelSerializer):

@@ -2,16 +2,17 @@ from rest_framework import serializers
 from .models import Author, Biography, Article, Book
 
 
-# class AuthorSerializer(serializers.ModelSerializer):
-#     class Meta:
-#         model = Author
-#         fields = '__all__'
+class AuthorSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Author
+        fields = ['first_name', 'last_name']
 
 
 class AuthorModelSerializer(serializers.ModelSerializer):
     class Meta:
         model = Author
-        exclude = ['uid']
+        # exclude = ['uid']
+        fields = '__all__'
 
 
 class BiographyModelSerializer(serializers.ModelSerializer):
@@ -27,8 +28,6 @@ class ArticleModelSerializer(serializers.ModelSerializer):
 
 
 class BookModelSerializer(serializers.ModelSerializer):
-    author = serializers.StringRelatedField()
-
     class Meta:
         model = Book
         fields = '__all__'
@@ -38,5 +37,3 @@ class BookModelSerializerBase(serializers.ModelSerializer):
     class Meta:
         model = Book
         fields = '__all__'
-
-

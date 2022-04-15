@@ -1,6 +1,7 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 
-const UserItem = ({user}) => {
+const UserItem = ({user, deleteUsers}) => {
     return (
         <tr className="tab-content">
             <td>
@@ -13,35 +14,40 @@ const UserItem = ({user}) => {
                 {user.birthday_year}
             </td>
             <td>
-                {user.gender}
+                {user.age}
             </td>
             <td>
-                {user.age}
+                <button onClick={() => deleteUsers(user.id)} type="button">
+                    Delete
+                </button>
             </td>
        </tr>
     )
 }
 
-const UserList = ({users}) => {
+const UserList = ({users, deleteUsers}) => {
     return (
-        <table className="table">
-            <th>
-                Имя
-            </th>
-            <th>
-                Фамилия
-            </th>
-            <th>
-                Год Рождения
-            </th>
-            <th>
-                Пол
-            </th>
-            <th>
-                Возраст
-            </th>
-            {users.map((user) => <UserItem user={user} />)}
-       </table>
+        <div>
+            <Link to='/user/create' className="link">Create new</Link>
+            <table className="table">
+
+                <th>
+                    Имя
+                </th>
+                <th>
+                    Фамилия
+                </th>
+                <th>
+                    Год Рождения
+                </th>
+                <th>
+                    Возраст
+                </th>
+                <th>
+                </th>
+                {users.map((user) => <UserItem user={user} deleteUsers={deleteUsers}/>)}
+           </table>
+       </div>
     )
 }
 

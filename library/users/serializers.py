@@ -15,8 +15,6 @@ class UserVersionSerializer(serializers.ModelSerializer):
 
 
 class UserMoreInfoSerializer(serializers.ModelSerializer):
-    user = UserVersionSerializer()
-
     class Meta:
         model = UserMoreInfo
         fields = '__all__'

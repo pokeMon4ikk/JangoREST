@@ -18,7 +18,7 @@ router.register('books', BookModelViewSet)
 router.register('project', ProjectModelViewSet)
 router.register('toDo', TODOModelViewSet)
 router.register('userinfo', UserMoreInfoModelViewSet)
-# router.register('user', UserModelViewSet)
+router.register('user', UserModelViewSet)
 
 
 schema_view = get_schema_view(
@@ -40,10 +40,10 @@ urlpatterns = [
     path('api/', include(router.urls)),
     path('api-token-auth/', views.obtain_auth_token),
     path('graphql/', GraphQLView.as_view(graphiql=True)),
-    re_path(r'^api/(?P<version>\d)/user/$', UserModelViewSet.as_view()),
+    # re_path(r'^api/(?P<version>\d)/user/$', UserModelViewSet.as_view()),
     # path('api/users/1/', include('users.urls', namespace='1')),
     # path('api/users/2/', include('users.urls', namespace='2'))
-    # path('api/users/', UserModelViewSet.as_view())
+    # path('api/users/', UserModelViewSet.as_view()),
 
     re_path(r'^swagger(?P<format>\.json|\.yaml)$', schema_view.without_ui(cache_timeout=0), name='schema-json'),
     path('swagger/', schema_view.with_ui('swagger', cache_timeout=0),name='schema-swagger-ui'),

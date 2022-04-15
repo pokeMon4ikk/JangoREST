@@ -57,7 +57,7 @@
 
 .menu li a {
     color: black;
-    text-decoration:none;
+
     text-align:center;
     font-weight: normal;
     font-style: normal
@@ -78,7 +78,6 @@
     position: relative;
     overflow: auto;
     top: 25%;
-    left: 30%;
     border: 1px solid;
 }
 
@@ -87,4 +86,13 @@
 }
 .tab-content td {
      border: 1px solid;
+}
+
+.link {
+    display: inline-block;
+    margin-left: 30px;
+    color: black;
+    position: relative;
+
+    font-size: 24px;
 }

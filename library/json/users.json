@@ -1,0 +1,51 @@
+[
+  {
+    "first_name": "Гриша",
+    "last_name": "Пупкин",
+    "birthday_year": "1999",
+    "gender": "M",
+    "age": "23"
+  },
+  {
+    "first_name": "Аркадий",
+    "last_name": "Пипкин",
+    "birthday_year": "1989",
+    "gender": "M",
+    "age": "33"
+  },
+  {
+    "first_name": "Евпатий",
+    "last_name": "Сонный",
+    "birthday_year": "1969",
+    "gender": "M",
+    "age": "53"
+  },
+  {
+    "first_name": "Жанна",
+    "last_name": "Цветаева",
+    "birthday_year": "1962",
+    "gender": "W",
+    "age": "60"
+  },
+  {
+    "first_name": "Crisha",
+    "last_name": "Glinkin",
+    "birthday_year": "1950",
+    "gender": "M",
+    "age": "72"
+  },
+  {
+    "first_name": "Crisha",
+    "last_name": "Julikov",
+    "birthday_year": "1922",
+    "gender": "M",
+    "age": "100"
+  },
+  {
+    "first_name": "Crisha",
+    "last_name": "Sedoy",
+    "birthday_year": "1997",
+    "gender": "M",
+    "age": "25"
+  }
+]

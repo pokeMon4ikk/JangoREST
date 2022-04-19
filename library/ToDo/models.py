@@ -1,5 +1,3 @@
-from datetime import datetime
-
 from django.db import models
 from uuid import uuid4
 
@@ -17,12 +15,12 @@ class TODO(models.Model):
 
 
 class Project(models.Model):
-    uid = models.UUIDField(primary_key=True, default=uuid4)
+    uid = models.UUIDField(primary_key=True, default=uuid4, auto_created=True, serialize=False)
     name = models.CharField(verbose_name='Название проекта', max_length=256)
     description = models.TextField(verbose_name='Описание проекта', blank=True)
     link_to_repo = models.URLField(verbose_name='Ссылка на репозиторий проекта', blank=True)
     devs = models.TextField(verbose_name='Разработчики', blank=True)
-    Todo = models.OneToOneField(TODO, verbose_name='Заметка', on_delete=models.CASCADE)
+    Todo = models.ForeignKey(TODO,  models.PROTECT, verbose_name='Заметка')
 
     def __str__(self):
         return self.name

@@ -1,0 +1,32 @@
+[
+  {
+    "first_name": "Александр",
+    "last_name": "Пушкин",
+    "birthday_year": "1799"
+  },
+  {
+    "first_name": "Лев",
+    "last_name": "Толстой",
+    "birthday_year": "1828"
+  },
+  {
+    "first_name": "Николай",
+    "last_name": "Гоголь",
+    "birthday_year": "1809"
+  },
+  {
+    "first_name": "Федор",
+    "last_name": "Достоевский",
+    "birthday_year": "1821"
+  },
+  {
+    "first_name": "Иван",
+    "last_name": "Тургеньев",
+    "birthday_year": "1818"
+  },
+  {
+    "first_name": "Антон",
+    "last_name": "Чехов",
+    "birthday_year": "1860"
+  }
+]

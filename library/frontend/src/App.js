@@ -59,7 +59,7 @@ class App extends React.Component {
     }
 
     get_token(username, password) {
-        axios.post('http://127.0.0.1:8000/api-token-auth/', {username: username, password: password})
+        axios.post('http://151.248.123.168:8000/api-token-auth/', {username: username, password: password})
             .then(response => {
             this.set_token(response.data['token'])
             console.log(response.data)
@@ -79,7 +79,7 @@ class App extends React.Component {
 
     load_data() {
         const headers = this.get_headers()
-        axios.get('http://127.0.0.1:8000/api/authors', {headers})
+        axios.get('http://151.248.123.168:8000/api/authors', {headers})
             .then(response => {
                 this.setState({authors: response.data.results})
             }).catch(error => {
@@ -87,7 +87,7 @@ class App extends React.Component {
                 this.setState({authors: []})
             })
 
-        axios.get('http://127.0.0.1:8000/api/user', {headers})
+        axios.get('http://151.248.123.168:8000/api/user', {headers})
             .then(response => {
                 this.setState({users: response.data.results})
             }).catch(error => {
@@ -95,7 +95,7 @@ class App extends React.Component {
                 this.setState({users: []})
             })
 
-        axios.get('http://127.0.0.1:8000/api/books', {headers})
+        axios.get('http://151.248.123.168:8000/api/books', {headers})
             .then(response => {
                 this.setState({books: response.data.results})
             }).catch(error => {
@@ -103,7 +103,7 @@ class App extends React.Component {
                 this.setState({books: []})
             })
 
-        axios.get('http://127.0.0.1:8000/api/toDo', {headers})
+        axios.get('http://151.248.123.168:8000/api/toDo', {headers})
             .then(response => {
                 this.setState({notes: response.data.results})
             }).catch(error => {
@@ -111,7 +111,7 @@ class App extends React.Component {
                 this.setState({notes: []})
             })
 
-        axios.get('http://127.0.0.1:8000/api/project', {headers})
+        axios.get('http://151.248.123.168:8000/api/project', {headers})
             .then(response => {
                 this.setState({projects: response.data.results})
             }).catch(error => {
@@ -122,7 +122,7 @@ class App extends React.Component {
     }
     deleteAuthor(uid){
         const headers = this.get_headers()
-        axios.delete(`http://127.0.0.1:8000/api/authors/${uid}`, {headers})
+        axios.delete(`http://151.248.123.168:8000/api/authors/${uid}`, {headers})
             .then(response => {
                 this.setState({authors: this.state.authors.filter((author) => author.uid !== uid)})
             }).catch(error => console.log(error))
@@ -130,7 +130,7 @@ class App extends React.Component {
 
     deleteBook(id){
         const headers = this.get_headers()
-        axios.delete(`http://127.0.0.1:8000/api/books/${id}`, {headers})
+        axios.delete(`http://151.248.123.168:8000/api/books/${id}`, {headers})
             .then(response => {
                 this.setState({books: this.state.books.filter((book) => book.id !== id)})
             }).catch(error => console.log(error))
@@ -138,14 +138,14 @@ class App extends React.Component {
 
     deleteProject(uid){
         const headers = this.get_headers()
-        axios.delete(`http://127.0.0.1:8000/api/project/${uid}`, {headers})
+        axios.delete(`http://151.248.123.168:8000/api/project/${uid}`, {headers})
             .then(response => {
                 this.setState({projects: this.state.projects.filter((project) => project.uid !== uid)})
             }).catch(error => console.log(error))
     }
     deleteToDo(id){
         const headers = this.get_headers()
-        axios.delete(`http://127.0.0.1:8000/api/toDo/${id}`, {headers})
+        axios.delete(`http://151.248.123.168:8000/api/toDo/${id}`, {headers})
             .then(response => {
                 this.setState({notes: this.state.notes.filter((note) => note.id !== id)})
             }).catch(error => console.log(error))
@@ -153,7 +153,7 @@ class App extends React.Component {
     }
     deleteUsers(id) {
         const headers = this.get_headers()
-        axios.delete(`http://127.0.0.1:8000/api/user/${id}`, {headers})
+        axios.delete(`http://151.248.123.168:8000/api/user/${id}`, {headers})
             .then(response => {
                 this.setState({users: this.state.users.filter((user) => user.id !== id)})
             }).catch(error => console.log(error))
@@ -161,7 +161,7 @@ class App extends React.Component {
     createUser(first_name, last_name, birthday_year, age) {
         const headers = this.get_headers()
         const data = {first_name:first_name, last_name:last_name,  birthday_year:birthday_year, age:age}
-        axios.post(`http://127.0.0.1:8000/api/user/`, data, {headers})
+        axios.post(`http://151.248.123.168:8000/api/user/`, data, {headers})
             .then(response => {
                 let newUser = response.data
                 this.setState({users: [...this.state.users, newUser]})
@@ -171,7 +171,7 @@ class App extends React.Component {
     createBook(name, author) {
         const headers = this.get_headers()
         const data = {name: name, author: author}
-        axios.post(`http://127.0.0.1:8000/api/books/`, data, {headers})
+        axios.post(`http://151.248.123.168:8000/api/books/`, data, {headers})
             .then(response => {
                 let newBook = response.data
                 const author = this.state.authors.filter((author) => author.uid === newBook.author)[0]
@@ -183,7 +183,7 @@ class App extends React.Component {
     createAuthor(first_name, last_name, birthday_year) {
         const headers = this.get_headers()
         const data = {first_name:first_name, last_name:last_name, birthday_year:birthday_year}
-        axios.post(`http://127.0.0.1:8000/api/authors/`, data, {headers})
+        axios.post(`http://151.248.123.168:8000/api/authors/`, data, {headers})
             .then(response => {
                 let newAuthor = response.data
                 this.setState({authors: [...this.state.authors, newAuthor]})
@@ -193,7 +193,7 @@ class App extends React.Component {
     createToDo(name, text, author) {
         const headers = this.get_headers()
         const data = {name:name, text:text, author:author}
-        axios.post(`http://127.0.0.1:8000/api/toDo/`, data, {headers})
+        axios.post(`http://151.248.123.168:8000/api/toDo/`, data, {headers})
             .then(response => {
                 let newTodo = response.data
                 this.setState({notes: [...this.state.notes, newTodo]})
@@ -203,7 +203,7 @@ class App extends React.Component {
     createProject(name, description, link_to_repo, devs, Todo){
         const headers = this.get_headers()
         const data = {name:name, description:description, link_to_repo:link_to_repo, devs:devs, Todo:Todo}
-        axios.post(`http://127.0.0.1:8000/api/project/`, data, {headers})
+        axios.post(`http://151.248.123.168:8000/api/project/`, data, {headers})
             .then(response => {
                 let newProject = response.data
                 const Todo = this.state.notes.filter((note) => note.id === newProject.Todo)[0]
